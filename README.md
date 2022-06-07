@@ -7,9 +7,11 @@
 1. Dataset examples with missing values were discarded and examples that had a value of 0 in the Landsize column were suppressed.
 2. As destination "y", the Price column was chosen, which is what you want to predict.
 3. The columns chosen in the dataset as "X" features were: ['Rooms', 'Bathroom', 'Landsize', 'Lattitude', 'Longtitude'].
-4. The dataset was divided into 4 parts for training and testing: X, X_test, y , y_test
+4. The dataset was divided into 4 parts for training and testing: train_X, val_X, train_y, val_y.
 5. The method chosen for the model was DecisionTreeRegressor, as it obtained the best result.
 6. The other methods tested that obtained inferior results were the regressions: Linear, Ridge and Lasso  
+7. In addition to using mean absolute error, a function with max leaf nodes was created to define which number of leaves would bring the best prediction result.
+8. After the previous analyses, a final model was defined and a joblib file was generated.
 ---
 ### **Conclusion:**  
 1. During the tests, I noticed that it was inconsistent that there are houses in Melbourne with bathrooms and bedrooms, but with a value of 0 in the Landsize column. For this reason I suppressed the examples that had this peculiarity.
